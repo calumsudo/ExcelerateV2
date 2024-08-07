@@ -1,24 +1,23 @@
-const rules = require("./webpack.rules");
-
-rules.push({
-  test: /\.css$/,
-  use: [
-    { loader: "style-loader" },
-    { loader: "css-loader" },
-    {
-      loader: "postcss-loader",
-      options: {
-        postcssOptions: {
-          plugins: [require("tailwindcss"), require("autoprefixer")],
-        },
-      },
-    },
-  ],
-});
+const path = require('path');
+const rules = require('./webpack.rules');
 
 module.exports = {
-  // Put your normal webpack config below here
+  entry: './src/renderer.js',
+  output: {
+    filename: 'renderer.bundle.js',
+    path: path.resolve(__dirname, '.webpack/renderer'),
+  },
   module: {
     rules,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  target: 'electron-renderer',
+  mode: 'development', // or 'production'
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
   },
 };

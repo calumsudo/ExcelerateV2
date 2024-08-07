@@ -4,7 +4,6 @@ import App from './App.jsx';
 import './index.css';
 import { PublicClientApplication, EventType } from '@azure/msal-browser';
 import { msalConfig } from './auth-config.js';
-import { m } from 'framer-motion';
 
 const msalInstance = new PublicClientApplication(msalConfig);
 

@@ -3,7 +3,7 @@
   "productName": "excelerateapp",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": ".webpack/main",
+  "main": ".webpack/main/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -32,7 +32,10 @@
     "postcss": "^8.4.41",
     "postcss-loader": "^8.1.1",
     "style-loader": "^3.0.0",
-    "tailwindcss": "^3.4.7"
+    "tailwindcss": "^3.4.7",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "keywords": [],
   "author": {
@@ -43,6 +46,7 @@
   "dependencies": {
     "@azure/msal-browser": "^3.20.0",
     "@azure/msal-react": "^2.0.22",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
     "@nextui-org/react": "^2.4.6",
     "electron-squirrel-startup": "^1.0.1",
     "framer-motion": "^11.3.21",
